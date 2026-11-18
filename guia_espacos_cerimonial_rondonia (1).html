@@ -1,0 +1,1207 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11110f">
+<title>Guia de Espaços | Cerimonial de Rondônia</title>
+
+<style>
+:root{--bg:#11110f;--surface:#1b1b18;--surface2:#24231e;--gold:#c6a45b;--gold-light:#e4cd91;--text:#f4f0e6;--muted:#aaa697;--line:#413c30;--red:#b96c60}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 "Segoe UI",Arial,sans-serif}
+header{padding:22px clamp(18px,5vw,70px);background:linear-gradient(110deg,#10100e,#242117);border-bottom:1px solid #57492c;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:15px}
+.seal{width:52px;height:52px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-light);font:700 17px Georgia,serif;letter-spacing:1px}
+.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);font-weight:700}
+.brand h1{font:500 22px Georgia,serif;margin:2px 0}
+.brand p{margin:0;color:var(--muted);font-size:12px}
+.header-note{font-size:11px;letter-spacing:1.5px;color:var(--muted);text-align:right}
+main{max-width:1220px;margin:auto;padding:34px 22px 65px}
+.hero{display:flex;justify-content:space-between;align-items:end;gap:24px}
+.hero h2{font:500 clamp(29px,4vw,39px) Georgia,serif;margin:5px 0 7px}
+.hero p{margin:0;color:var(--muted);max-width:650px}
+.buttons{display:flex;gap:9px;flex-wrap:wrap}
+button{border:1px solid var(--gold);background:var(--gold);color:#17150f;padding:11px 15px;border-radius:4px;font-weight:700;cursor:pointer;font-size:13px}
+button:hover{background:var(--gold-light)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.outline{background:transparent;color:var(--gold-light)}
+button.outline:hover{background:#302a1c}
+button.danger{background:transparent;color:#e3aaa0;border-color:#8b5048}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 18px}
+.stat{border:1px solid var(--line);padding:8px 12px;border-radius:4px;color:var(--muted);font-size:12px}
+.stat b{color:var(--gold-light);font-size:16px;margin-right:5px}
+.toolbar{display:flex;gap:10px;margin:20px 0;flex-wrap:wrap}
+.toolbar input{flex:1;min-width:220px}
+.toolbar select{max-width:210px}
+input,select,textarea{width:100%;background:#121210;color:var(--text);border:1px solid var(--line);border-radius:4px;padding:12px;font:inherit;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+label{display:block;color:#d9cfba;font-size:12px;font-weight:650;margin-bottom:7px}
+.field{margin-bottom:15px}
+.hint{font-size:11px;color:var(--muted);margin-top:5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:16px}
+.venue{background:linear-gradient(145deg,#22221d,#181816);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.venue:hover{border-color:#8c7445}
+.photo{height:175px;background:#29271f;display:grid;place-items:center;overflow:hidden;color:#817963}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .placeholder{text-align:center;font:17px Georgia,serif}
+.venue-body{padding:17px}
+.venue h3{font:500 22px Georgia,serif;margin:0 0 5px}
+.address{font-size:12px;color:var(--muted);min-height:18px}
+.capacity{color:var(--gold-light);font-size:13px;margin:12px 0}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}
+.chip{border:1px solid #514936;color:#d7c9a6;border-radius:3px;padding:4px 7px;font-size:10px}
+.venue-actions{display:flex;gap:7px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:13px}
+.venue-actions button{font-size:11px;padding:8px 9px}
+.empty{grid-column:1/-1;text-align:center;padding:45px 20px;border:1px dashed #514a39;color:var(--muted)}
+.empty b{display:block;font:22px Georgia,serif;color:var(--text);margin-bottom:8px}
+.overlay{display:none;position:fixed;inset:0;background:#000c;z-index:5;overflow:auto;padding:18px}
+.overlay.open{display:block}
+.modal{max-width:790px;margin:22px auto;background:#1b1b18;border:1px solid #76613a;border-radius:7px;padding:24px;box-shadow:0 20px 70px #000}
+.modalhead{display:flex;justify-content:space-between;gap:15px;align-items:start;margin-bottom:20px}
+.modal h2{font:26px Georgia,serif;margin:0}
+.close{background:transparent;color:var(--gold-light);font-size:22px;padding:1px 9px}
+.section{font:17px Georgia,serif;color:var(--gold-light);border-bottom:1px solid var(--line);padding-bottom:8px;margin:22px 0 14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}
+.full{grid-column:1/-1}
+.checks{display:flex;gap:20px;flex-wrap:wrap}
+.checks label{display:flex;align-items:center;gap:8px;margin:0}
+.checks input{width:auto;accent-color:var(--gold)}
+.preview{width:100%;max-height:230px;object-fit:contain;background:#121210;border:1px solid var(--line);border-radius:4px;margin-top:8px;display:none}
+.map-preview{width:100%;height:250px;border:0;border-radius:4px;margin-top:10px;background:#28271f}
+.modalfoot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:22px}
+.modalfoot>div{display:flex;gap:8px}
+.detail{max-width:700px}
+.detail-photo{width:100%;max-height:330px;object-fit:cover;border-radius:4px;margin:8px 0 15px}
+.detailrow{padding:11px 0;border-bottom:1px solid var(--line)}
+.detailrow b{display:block;color:var(--gold-light);font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.detailrow a{color:var(--gold-light);overflow-wrap:anywhere}
+.footer{text-align:center;border-top:1px solid var(--line);padding-top:18px;margin-top:42px;color:#777367;font-size:10px;letter-spacing:1px}
+.pdf-options{max-width:760px}
+.option-group{border:1px solid var(--line);border-radius:5px;padding:14px;margin:12px 0}
+.option-group h3{font:17px Georgia,serif;color:var(--gold-light);margin:0 0 12px}
+.option-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.option-list label{display:flex;align-items:center;gap:8px;margin:0;font-size:13px;font-weight:500}
+.option-list input{width:auto;accent-color:var(--gold)}
+.select-tools{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
+.venue-pdf-list{max-height:220px;overflow:auto;border:1px solid var(--line);padding:10px;border-radius:4px}
+.venue-pdf-list label{display:flex;align-items:center;gap:9px;margin:7px 0;font-size:13px}
+.venue-pdf-list input{width:auto;accent-color:var(--gold)}
+@media(max-width:650px){
+header{align-items:flex-start}
+.header-note{display:none}
+.hero{display:block}
+.hero .buttons{margin-top:17px}
+.grid{grid-template-columns:1fr}
+.full{grid-column:auto}
+.modal{padding:17px}
+.overlay{padding:8px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">
+<div class="seal">RO</div>
+<div>
+<div class="eyebrow">Governo do Estado de Rondônia</div>
+<h1>Guia de Espaços para Eventos</h1>
+<p>Setor de Cerimonial • Diretório institucional</p>
+</div>
+</div>
+<div class="header-note">CERIMONIAL DO GOVERNO DE RONDÔNIA</div>
+</header>
+
+<main>
+<section class="hero">
+<div>
+<div class="eyebrow">Diretório de espaços</div>
+<h2>Encontre o espaço ideal.</h2>
+<p>Uma ferramenta de consulta e organização de casas de eventos para apoiar o planejamento de solenidades e atividades institucionais do Governo do Estado de Rondônia.</p>
+</div>
+<div class="buttons">
+<button class="outline" onclick="openPdfOptions()">Gerar PDF</button>
+<button class="outline" onclick="exportData()">Exportar dados</button>
+<button onclick="openForm()">＋ Cadastrar espaço</button>
+</div>
+</section>
+
+<div class="stats">
+<div class="stat"><b id="count">0</b> espaços cadastrados</div>
+<div class="stat"><b id="climateCount">0</b> climatizados</div>
+<div class="stat"><b id="parkingCount">0</b> com estacionamento</div>
+</div>
+
+<div class="toolbar">
+<input id="search" placeholder="Buscar por nome ou endereço..." oninput="render()">
+<select id="filter" onchange="render()">
+<option value="all">Todos os espaços</option>
+<option value="climate">Climatizados</option>
+<option value="parking">Com estacionamento</option>
+</select>
+</div>
+
+<section class="cards" id="cards"></section>
+<div class="footer">GUIA DE ESPAÇOS PARA EVENTOS • CERIMONIAL DO GOVERNO DO ESTADO DE RONDÔNIA</div>
+</main>
+
+<div class="overlay" id="formOverlay" onclick="if(event.target===this)closeForm()">
+<div class="modal">
+<div class="modalhead">
+<div><div class="eyebrow">Cadastro de espaço</div><h2 id="formTitle">Adicionar casa de eventos</h2></div>
+<button class="close" onclick="closeForm()">×</button>
+</div>
+
+<form id="venueForm" onsubmit="saveVenue(event)">
+<input type="hidden" id="venueId">
+<div class="section">Identificação do local</div>
+<div class="grid">
+<div class="field"><label for="name">Nome do local *</label><input id="name" required placeholder="Nome da casa de eventos"></div>
+<div class="field"><label for="capacity">Capacidade de pessoas</label><input id="capacity" type="number" min="0" placeholder="Ex.: 300"></div>
+<div class="field full"><label for="address">Endereço completo</label><input id="address" placeholder="Rua, número, bairro, município/RO"></div>
+<div class="field full">
+<label>Estrutura disponível</label>
+<div class="checks">
+<label><input type="checkbox" id="climate"> Ambiente climatizado</label>
+<label><input type="checkbox" id="parking"> Possui estacionamento</label>
+</div>
+</div>
+</div>
+
+<div class="section">Contatos e redes sociais</div>
+<div class="grid">
+<div class="field"><label for="instagram">Instagram</label><input id="instagram" placeholder="@perfil ou link"></div>
+<div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" placeholder="(69) 99999-9999"></div>
+</div>
+
+<div class="section">Fotografia do espaço</div>
+<div class="field">
+<label for="photo">Adicionar foto do local</label>
+<input id="photo" type="file" accept="image/*" onchange="previewPhoto(event)">
+<div class="hint">A imagem será enviada ao armazenamento do sistema. Tamanho máximo: 5 MB.</div>
+<img id="photoPreview" class="preview" alt="Pré-visualização da foto">
+<button type="button" id="removePhoto" class="outline" style="display:none;margin-top:8px" onclick="clearPhoto()">Remover foto</button>
+</div>
+
+<div class="section">Localização no mapa</div>
+<div class="field">
+<label for="map">Link do Google Maps</label>
+<input id="map" type="url" placeholder="Cole o link de compartilhamento do Google Maps">
+<div class="hint">No Google Maps, abra o local, selecione Compartilhar e copie o link.</div>
+</div>
+
+<div class="section">Informações complementares</div>
+<div class="field">
+<label for="notes">Observações</label>
+<textarea id="notes" rows="3" placeholder="Informações úteis para o planejamento do evento..."></textarea>
+</div>
+
+<div class="modalfoot">
+<button type="button" class="danger" id="deleteBtn" style="display:none" onclick="deleteCurrent()">Excluir cadastro</button>
+<div>
+<button type="button" class="outline" onclick="closeForm()">Cancelar</button>
+<button type="submit">Salvar espaço</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+<div class="overlay" id="loginOverlay" onclick="if(event.target===this)closeLogin()">
+<div class="modal" style="max-width:430px">
+<div class="modalhead">
+<div>
+<div class="eyebrow">Área restrita</div>
+<h2>Acesso administrativo</h2>
+<div class="hint">Entre com seu e-mail e senha cadastrados no Supabase.</div>
+</div>
+<button class="close" onclick="closeLogin()">×</button>
+</div>
+<form id="loginForm" onsubmit="signInAdmin(event)">
+<div class="field"><label for="loginEmail">E-mail</label><input id="loginEmail" type="email" autocomplete="username" required></div>
+<div class="field"><label for="loginPassword">Senha</label><input id="loginPassword" type="password" autocomplete="current-password" required></div>
+<div class="hint" id="loginMessage" role="status"></div>
+<div class="modalfoot">
+<span></span>
+<div>
+<button type="button" class="outline" onclick="closeLogin()">Cancelar</button>
+<button type="submit">Entrar</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+<div class="overlay" id="pdfOverlay" onclick="if(event.target===this)closePdfOptions()">
+<div class="modal pdf-options">
+<div class="modalhead">
+<div>
+<div class="eyebrow">Documento institucional</div>
+<h2>Personalizar PDF</h2>
+<div class="hint">Escolha os espaços e as informações que deverão aparecer no documento.</div>
+</div>
+<button class="close" onclick="closePdfOptions()">×</button>
+</div>
+
+<div class="option-group">
+<h3>1. Casas de eventos</h3>
+<div class="select-tools">
+<button type="button" class="outline" onclick="selectAllVenues(true)">Selecionar todas</button>
+<button type="button" class="outline" onclick="selectAllVenues(false)">Desmarcar todas</button>
+</div>
+<div class="venue-pdf-list" id="pdfVenueList"></div>
+</div>
+
+<div class="option-group">
+<h3>2. Informações para incluir</h3>
+<div class="option-list">
+<label><input type="checkbox" name="pdfField" value="photo" checked> Fotografia do local</label>
+<label><input type="checkbox" name="pdfField" value="capacity" checked> Capacidade de pessoas</label>
+<label><input type="checkbox" name="pdfField" value="address" checked> Endereço</label>
+<label><input type="checkbox" name="pdfField" value="climate" checked> Ambiente climatizado</label>
+<label><input type="checkbox" name="pdfField" value="parking" checked> Estacionamento</label>
+<label><input type="checkbox" name="pdfField" value="instagram" checked> Instagram</label>
+<label><input type="checkbox" name="pdfField" value="whatsapp" checked> WhatsApp</label>
+<label><input type="checkbox" name="pdfField" value="map" checked> Link / localização no mapa</label>
+<label><input type="checkbox" name="pdfField" value="notes" checked> Observações</label>
+</div>
+</div>
+
+<div class="modalfoot">
+<span class="hint">O PDF será preparado para impressão. Na janela seguinte, escolha “Salvar como PDF”.</span>
+<div>
+<button type="button" class="outline" onclick="closePdfOptions()">Cancelar</button>
+<button type="button" onclick="generatePdf()">Gerar PDF</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
+<div class="modal detail" id="detailContent"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+// ========================================
+// CONFIGURAÇÃO DO SUPABASE
+// ========================================
+
+const SUPABASE_URL = 'https://ntkpxufqccxwhtrhkbuq.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_Cu3NKjVudpIvnns_Fg3qEA_E5N6TgCg';
+
+// O nome sbClient evita conflito com a variável global da biblioteca.
+const sbClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+let venues = [];
+let currentUser = null;
+let isAdmin = false;
+let pendingPhoto = null;
+let selectedPhotoFile = null;
+let removeExistingPhoto = false;
+
+const $ = id => document.getElementById(id);
+
+// ========================================
+// FUNÇÕES AUXILIARES
+// ========================================
+
+function esc(s){
+  return String(s ?? '').replace(/[&<>"']/g, c => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  }[c]));
+}
+
+function clean(s){
+  return String(s || '').trim();
+}
+
+function url(raw){
+  let s = clean(raw);
+  if (!s) return '';
+  if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
+  try {
+    return new URL(s).href;
+  } catch(e) {
+    return '';
+  }
+}
+
+function social(raw,type){
+  let s = clean(raw);
+  if (!s) return '';
+
+  if (/^https?:\/\//i.test(s)) return url(s);
+
+  if (type === 'instagram') {
+    return 'https://instagram.com/' + s.replace(/^@/,'');
+  }
+
+  let n = s.replace(/\D/g,'');
+
+  if (n.length === 10 || n.length === 11) {
+    n = '55' + n;
+  }
+
+  return n.length >= 12 && n.length <= 13
+    ? 'https://wa.me/' + n
+    : url(s);
+}
+
+// ========================================
+// AUTENTICAÇÃO E PERMISSÕES
+// ========================================
+
+function showLogin(){
+  $('loginOverlay').classList.add('open');
+  $('loginMessage').textContent = '';
+  $('loginEmail').focus();
+}
+
+function closeLogin(){
+  $('loginOverlay').classList.remove('open');
+}
+
+function handleAuthButton(){
+  if (isAdmin) {
+    signOutAdmin();
+  } else {
+    showLogin();
+  }
+}
+
+// Consulta a função is_admin() criada no banco.
+// Somente as contas cadastradas na tabela admins recebem acesso.
+async function checkAdmin(){
+  isAdmin = false;
+
+  if (!currentUser) {
+    updateAuthUI();
+    render();
+    return false;
+  }
+
+  const { data, error } = await sbClient.rpc('is_admin');
+
+  if (error) {
+    console.error('Erro ao verificar administrador:', error);
+    isAdmin = false;
+  } else {
+    isAdmin = data === true;
+  }
+
+  updateAuthUI();
+  render();
+
+  return isAdmin;
+}
+
+function updateAuthUI(){
+  const btn = $('authButton');
+  if (!btn) return;
+
+  btn.textContent = isAdmin
+    ? 'Sair do administrador'
+    : 'Entrar como administrador';
+
+  btn.title = isAdmin
+    ? 'Sessão administrativa ativa'
+    : 'Acesso restrito aos administradores';
+}
+
+async function signInAdmin(e){
+  e.preventDefault();
+
+  const email = clean($('loginEmail').value);
+  const password = $('loginPassword').value;
+
+  const submit = $('loginForm').querySelector('button[type="submit"]');
+
+  submit.disabled = true;
+  submit.textContent = 'Verificando...';
+
+  $('loginMessage').textContent = 'Verificando acesso...';
+
+  try {
+    const { data, error } = await sbClient.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) throw error;
+
+    currentUser = data.user;
+
+    const admin = await checkAdmin();
+
+    if (!admin) {
+      await sbClient.auth.signOut();
+      currentUser = null;
+      isAdmin = false;
+      updateAuthUI();
+
+      $('loginMessage').textContent =
+        'Esta conta não está cadastrada como administradora.';
+
+      return;
+    }
+
+    closeLogin();
+    $('loginForm').reset();
+
+    alert('Acesso administrativo liberado!');
+
+    render();
+
+  } catch(error) {
+    console.error('Erro no login:', error);
+
+    $('loginMessage').textContent =
+      'Não foi possível entrar. Confira o e-mail e a senha.';
+  } finally {
+    submit.disabled = false;
+    submit.textContent = 'Entrar';
+  }
+}
+
+async function signOutAdmin(){
+  const { error } = await sbClient.auth.signOut();
+
+  if (error) {
+    alert('Não foi possível encerrar a sessão.');
+    console.error(error);
+    return;
+  }
+
+  currentUser = null;
+  isAdmin = false;
+
+  updateAuthUI();
+  render();
+
+  alert('Sessão encerrada.');
+}
+
+// ========================================
+// CARREGAMENTO DOS ESPAÇOS
+// ========================================
+
+async function loadVenues(){
+  $('cards').innerHTML =
+    '<div class="empty"><b>Carregando espaços...</b>Aguarde um instante.</div>';
+
+  const { data, error } = await sbClient
+    .from('espacos_eventos')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Erro ao carregar espaços:', error);
+
+    $('cards').innerHTML =
+      '<div class="empty"><b>Não foi possível carregar os espaços</b>Verifique a conexão com o Supabase e as políticas de leitura.</div>';
+
+    return;
+  }
+
+  venues = (data || []).map(row => ({
+    id: String(row.id),
+    name: row.nome || '',
+    capacity: row.capacidade || '',
+    address: row.endereco || '',
+    instagram: row.instagram || '',
+    whatsapp: row.whatsapp || '',
+    map: row.mapa || '',
+    notes: row.descricao || '',
+    photo: row.foto_url || '',
+    climate: ['sim','true','1','yes'].includes(
+      String(row.climatizacao || '').toLowerCase()
+    ),
+    parking: ['sim','true','1','yes'].includes(
+      String(row.estacionamento || '').toLowerCase()
+    )
+  }));
+
+  render();
+}
+
+// ========================================
+// INICIALIZAÇÃO
+// ========================================
+
+async function initApp(){
+  try {
+    const { data, error } = await sbClient.auth.getSession();
+
+    if (error) throw error;
+
+    currentUser = data.session?.user || null;
+
+    await checkAdmin();
+    await loadVenues();
+
+  } catch(error) {
+    console.error('Erro ao iniciar o sistema:', error);
+
+    $('cards').innerHTML =
+      '<div class="empty"><b>Erro ao iniciar o sistema</b>Verifique a conexão com o Supabase.</div>';
+  }
+}
+
+// ========================================
+// EXIBIÇÃO DOS CARDS
+// ========================================
+
+function render(){
+  const q = clean($('search').value).toLocaleLowerCase('pt-BR');
+  const f = $('filter').value;
+
+  const list = venues.filter(v =>
+    (!q || (v.name + ' ' + v.address).toLocaleLowerCase('pt-BR').includes(q)) &&
+    (f === 'all' || (f === 'climate' ? v.climate : v.parking))
+  );
+
+  $('count').textContent = venues.length;
+  $('climateCount').textContent =
+    venues.filter(v => v.climate).length;
+  $('parkingCount').textContent =
+    venues.filter(v => v.parking).length;
+
+  $('cards').innerHTML = list.length ? list.map(v => `
+    <article class="venue">
+      <div class="photo">
+        ${v.photo
+          ? `<img src="${esc(v.photo)}" alt="Foto de ${esc(v.name)}">`
+          : '<div class="placeholder">Fotografia não cadastrada</div>'}
+      </div>
+
+      <div class="venue-body">
+        <div class="eyebrow">Espaço para eventos</div>
+        <h3>${esc(v.name)}</h3>
+        <div class="address">${esc(v.address || 'Endereço não informado')}</div>
+
+        <div class="capacity">
+          ${v.capacity
+            ? esc(v.capacity) + ' pessoas'
+            : 'Capacidade não informada'}
+        </div>
+
+        <div class="chips">
+          <span class="chip">
+            ${v.climate ? '✓ Climatizado' : 'Climatização não informada'}
+          </span>
+          <span class="chip">
+            ${v.parking ? '✓ Estacionamento' : 'Estacionamento não informado'}
+          </span>
+        </div>
+
+        <div class="venue-actions">
+          <button onclick="showDetail('${esc(v.id)}')">Ver ficha</button>
+          <button class="outline" onclick="shareVenue('${esc(v.id)}')">WhatsApp</button>
+
+          ${isAdmin
+            ? `<button class="outline" onclick="editVenue('${esc(v.id)}')">Editar</button>`
+            : ''}
+        </div>
+      </div>
+    </article>
+  `).join('') :
+  '<div class="empty"><b>Nenhum espaço encontrado</b>Não há cadastros para esta busca ou filtro.</div>';
+}
+
+// ========================================
+// CADASTRO E EDIÇÃO
+// ========================================
+
+function openForm(v=null){
+  if (!isAdmin) {
+    showLogin();
+    return;
+  }
+
+  $('venueForm').reset();
+
+  selectedPhotoFile = null;
+  removeExistingPhoto = false;
+  pendingPhoto = v?.photo || null;
+
+  $('venueId').value = v?.id || '';
+
+  $('formTitle').textContent = v
+    ? 'Editar espaço'
+    : 'Adicionar casa de eventos';
+
+  $('deleteBtn').style.display = v ? 'inline-block' : 'none';
+
+  ['name','capacity','address','instagram','whatsapp','map','notes']
+    .forEach(k => $(k).value = v?.[k] || '');
+
+  $('climate').checked = !!v?.climate;
+  $('parking').checked = !!v?.parking;
+
+  updatePhotoPreview();
+
+  $('formOverlay').classList.add('open');
+}
+
+function closeForm(){
+  $('formOverlay').classList.remove('open');
+}
+
+function previewPhoto(e){
+  const file = e.target.files?.[0];
+
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    alert('Selecione um arquivo de imagem.');
+    e.target.value = '';
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    alert('Escolha uma foto de até 5 MB.');
+    e.target.value = '';
+    return;
+  }
+
+  selectedPhotoFile = file;
+  removeExistingPhoto = false;
+
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    pendingPhoto = reader.result;
+    updatePhotoPreview();
+  };
+
+  reader.readAsDataURL(file);
+}
+
+function updatePhotoPreview(){
+  $('photoPreview').src = pendingPhoto || '';
+  $('photoPreview').style.display = pendingPhoto ? 'block' : 'none';
+  $('removePhoto').style.display = pendingPhoto ? 'inline-block' : 'none';
+}
+
+function clearPhoto(){
+  pendingPhoto = null;
+  selectedPhotoFile = null;
+  removeExistingPhoto = true;
+  $('photo').value = '';
+  updatePhotoPreview();
+}
+
+// ========================================
+// ARMAZENAMENTO DAS FOTOS
+// ========================================
+
+async function uploadPhoto(file){
+  const original = file.name || 'foto';
+
+  const ext = (original.split('.').pop() || 'jpg')
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g,'') || 'jpg';
+
+  const path = `${crypto.randomUUID()}.${ext}`;
+
+  const { error } = await sbClient
+    .storage
+    .from('espacos-eventos')
+    .upload(path, file, {
+      cacheControl: '3600',
+      upsert: false,
+      contentType: file.type
+    });
+
+  if (error) throw error;
+
+  const { data } = sbClient
+    .storage
+    .from('espacos-eventos')
+    .getPublicUrl(path);
+
+  return data.publicUrl;
+}
+
+// ========================================
+// SALVAR ESPAÇO
+// ========================================
+
+async function saveVenue(e){
+  e.preventDefault();
+
+  if (!isAdmin) {
+    closeForm();
+    showLogin();
+    return;
+  }
+
+  const submit = $('venueForm').querySelector('button[type="submit"]');
+
+  submit.disabled = true;
+  submit.textContent = 'Salvando...';
+
+  try {
+    let photoUrl =
+      pendingPhoto && !String(pendingPhoto).startsWith('data:')
+        ? pendingPhoto
+        : null;
+
+    if (selectedPhotoFile) {
+      photoUrl = await uploadPhoto(selectedPhotoFile);
+    }
+
+    if (removeExistingPhoto) {
+      photoUrl = null;
+    }
+
+    const record = {
+      nome: clean($('name').value),
+      capacidade: clean($('capacity').value) || null,
+      endereco: clean($('address').value) || null,
+      instagram: clean($('instagram').value) || null,
+      whatsapp: clean($('whatsapp').value) || null,
+      mapa: clean($('map').value) || null,
+      descricao: clean($('notes').value) || null,
+      climatizacao: $('climate').checked ? 'Sim' : 'Não',
+      estacionamento: $('parking').checked ? 'Sim' : 'Não',
+      foto_url: photoUrl
+    };
+
+    const id = $('venueId').value;
+
+    let result;
+
+    if (id) {
+      result = await sbClient
+        .from('espacos_eventos')
+        .update(record)
+        .eq('id', id);
+    } else {
+      result = await sbClient
+        .from('espacos_eventos')
+        .insert(record);
+    }
+
+    if (result.error) throw result.error;
+
+    closeForm();
+
+    await loadVenues();
+
+    alert('Espaço salvo com sucesso!');
+
+  } catch(error) {
+    console.error('Erro ao salvar espaço:', error);
+
+    alert(
+      'Não foi possível salvar. Confira se sua conta tem permissão de administrador e tente novamente.'
+    );
+
+  } finally {
+    submit.disabled = false;
+    submit.textContent = 'Salvar espaço';
+  }
+}
+
+function editVenue(id){
+  if (!isAdmin) {
+    showLogin();
+    return;
+  }
+
+  const v = venues.find(x => x.id === String(id));
+
+  if (v) openForm(v);
+}
+
+// ========================================
+// EXCLUIR ESPAÇO
+// ========================================
+
+async function deleteCurrent(){
+  if (!isAdmin) {
+    showLogin();
+    return;
+  }
+
+  const id = $('venueId').value;
+
+  if (!id || !confirm('Deseja excluir este cadastro? Esta ação não pode ser desfeita.')) {
+    return;
+  }
+
+  const { error } = await sbClient
+    .from('espacos_eventos')
+    .delete()
+    .eq('id', id);
+
+  if (error) {
+    console.error('Erro ao excluir:', error);
+    alert('Não foi possível excluir. Verifique sua permissão de administrador.');
+    return;
+  }
+
+  closeForm();
+
+  await loadVenues();
+
+  alert('Cadastro excluído.');
+}
+
+// ========================================
+// FICHA DETALHADA
+// ========================================
+
+function showDetail(id){
+  const v = venues.find(x => x.id === String(id));
+
+  if (!v) return;
+
+  const map = url(v.map);
+  const ig = social(v.instagram,'instagram');
+  const wa = social(v.whatsapp,'whatsapp');
+
+  $('detailContent').innerHTML = `
+    <div class="modalhead">
+      <div>
+        <div class="eyebrow">Ficha do espaço</div>
+        <h2>${esc(v.name)}</h2>
+      </div>
+      <button class="close" onclick="closeDetail()">×</button>
+    </div>
+
+    ${v.photo
+      ? `<img class="detail-photo" src="${esc(v.photo)}" alt="Foto de ${esc(v.name)}">`
+      : ''}
+
+    <div class="detailrow">
+      <b>Endereço</b>
+      ${esc(v.address || 'Não informado')}
+    </div>
+
+    <div class="detailrow">
+      <b>Capacidade</b>
+      ${esc(v.capacity ? v.capacity + ' pessoas' : 'Não informada')}
+    </div>
+
+    <div class="detailrow">
+      <b>Estrutura</b>
+      ${v.climate ? 'Ambiente climatizado' : 'Climatização não informada'}
+      •
+      ${v.parking ? 'Possui estacionamento' : 'Estacionamento não informado'}
+    </div>
+
+    <div class="detailrow">
+      <b>Instagram</b>
+      ${ig
+        ? `<a href="${esc(ig)}" target="_blank" rel="noopener">${esc(v.instagram)}</a>`
+        : 'Não informado'}
+    </div>
+
+    <div class="detailrow">
+      <b>WhatsApp</b>
+      ${wa
+        ? `<a href="${esc(wa)}" target="_blank" rel="noopener">${esc(v.whatsapp)}</a>`
+        : 'Não informado'}
+    </div>
+
+    <div class="detailrow">
+      <b>Observações</b>
+      ${esc(v.notes || 'Nenhuma observação cadastrada')}
+    </div>
+
+    <div class="detailrow">
+      <b>Mapa</b>
+      ${map
+        ? `<a href="${esc(map)}" target="_blank" rel="noopener">Abrir localização no Google Maps ↗</a>`
+        : v.address
+          ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.address)}" target="_blank" rel="noopener">Localizar endereço no Google Maps ↗</a>`
+          : 'Não informado'}
+
+      ${map
+        ? `<iframe class="map-preview" loading="lazy" src="https://www.google.com/maps?q=${encodeURIComponent(v.address || map)}&output=embed"></iframe>`
+        : ''}
+    </div>
+
+    <div class="modalfoot">
+      <button class="outline" onclick="shareVenue('${esc(v.id)}')">Compartilhar indicação</button>
+      <div><button onclick="closeDetail()">Fechar</button></div>
+    </div>
+  `;
+
+  $('detailOverlay').classList.add('open');
+}
+
+function closeDetail(){
+  $('detailOverlay').classList.remove('open');
+}
+
+// ========================================
+// COMPARTILHAMENTO PELO WHATSAPP
+// ========================================
+
+function shareVenue(id){
+  const v = venues.find(x => x.id === String(id));
+
+  if (!v) return;
+
+  const parts = [
+    '*' + v.name + '*',
+    'Guia de Espaços para Eventos — Cerimonial do Governo de Rondônia',
+    '',
+    v.address ? '📍 ' + v.address : null,
+    v.capacity ? '👥 Capacidade: ' + v.capacity + ' pessoas' : null,
+    '❄️ Ambiente climatizado: ' + (v.climate ? 'Sim' : 'Não informado'),
+    '🚗 Estacionamento: ' + (v.parking ? 'Sim' : 'Não informado'),
+    v.instagram ? '📷 Instagram: ' + social(v.instagram,'instagram') : null,
+    v.whatsapp ? '💬 WhatsApp: ' + social(v.whatsapp,'whatsapp') : null,
+    v.map ? '🗺️ Mapa: ' + v.map : null,
+    v.notes ? 'ℹ️ Observações: ' + v.notes : null
+  ].filter(Boolean);
+
+  window.open(
+    'https://wa.me/?text=' + encodeURIComponent(parts.join('\n')),
+    '_blank',
+    'noopener'
+  );
+}
+
+// ========================================
+// EXPORTAR DADOS
+// ========================================
+
+function exportData(){
+  const blob = new Blob(
+    [JSON.stringify(venues,null,2)],
+    {type:'application/json'}
+  );
+
+  const u = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+
+  a.href = u;
+  a.download = 'guia-espacos-cerimonial-rondonia.json';
+
+  a.click();
+
+  URL.revokeObjectURL(u);
+}
+
+// ========================================
+// CONFIGURAÇÃO DO PDF
+// ========================================
+
+function openPdfOptions(){
+  if (!venues.length) {
+    alert('Cadastre pelo menos uma casa de eventos antes de gerar o PDF.');
+    return;
+  }
+
+  $('pdfVenueList').innerHTML = venues.map(v => `
+    <label>
+      <input type="checkbox" class="pdfVenueCheck" value="${esc(v.id)}" checked>
+      ${esc(v.name)}
+    </label>
+  `).join('');
+
+  $('pdfOverlay').classList.add('open');
+}
+
+function closePdfOptions(){
+  $('pdfOverlay').classList.remove('open');
+}
+
+function selectAllVenues(checked){
+  document.querySelectorAll('.pdfVenueCheck')
+    .forEach(c => c.checked = checked);
+}
+
+function generatePdf(){
+  const ids = [
+    ...document.querySelectorAll('.pdfVenueCheck:checked')
+  ].map(c => c.value);
+
+  const fields = [
+    ...document.querySelectorAll('input[name="pdfField"]:checked')
+  ].map(c => c.value);
+
+  if (!ids.length) {
+    alert('Selecione pelo menos uma casa de eventos.');
+    return;
+  }
+
+  if (!fields.length) {
+    alert('Selecione pelo menos uma informação para compor o PDF.');
+    return;
+  }
+
+  const selected = venues.filter(v => ids.includes(v.id));
+
+  const fieldNames = {
+    photo:'Fotografia',
+    capacity:'Capacidade',
+    address:'Endereço',
+    climate:'Ambiente climatizado',
+    parking:'Estacionamento',
+    instagram:'Instagram',
+    whatsapp:'WhatsApp',
+    map:'Mapa',
+    notes:'Observações'
+  };
+
+  const rows = v => fields.map(f => {
+    let value = '';
+
+    if (f === 'photo') {
+      value = v.photo
+        ? `<img class="venue-photo" src="${esc(v.photo)}" alt="Fotografia de ${esc(v.name)}">`
+        : 'Não cadastrada';
+    }
+
+    if (f === 'capacity') {
+      value = v.capacity
+        ? esc(v.capacity) + ' pessoas'
+        : 'Não informada';
+    }
+
+    if (f === 'address') {
+      value = esc(v.address || 'Não informado');
+    }
+
+    if (f === 'climate') {
+      value = v.climate ? 'Sim' : 'Não informado';
+    }
+
+    if (f === 'parking') {
+      value = v.parking ? 'Sim' : 'Não informado';
+    }
+
+    if (f === 'instagram') {
+      value = v.instagram
+        ? `<a href="${esc(social(v.instagram,'instagram'))}">${esc(v.instagram)}</a>`
+        : 'Não informado';
+    }
+
+    if (f === 'whatsapp') {
+      value = v.whatsapp
+        ? `<a href="${esc(social(v.whatsapp,'whatsapp'))}">${esc(v.whatsapp)}</a>`
+        : 'Não informado';
+    }
+
+    if (f === 'map') {
+      value = v.map
+        ? `<a href="${esc(url(v.map))}">Abrir localização no Google Maps</a>`
+        : v.address
+          ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.address)}">Localizar endereço no Google Maps</a>`
+          : 'Não informado';
+    }
+
+    if (f === 'notes') {
+      value = esc(v.notes || 'Nenhuma observação cadastrada');
+    }
+
+    return `
+      <div class="info">
+        <strong>${fieldNames[f]}</strong>
+        <div>${value}</div>
+      </div>
+    `;
+  }).join('');
+
+  const w = window.open('','_blank');
+
+  if (!w) {
+    alert('O navegador bloqueou a janela do PDF. Permita pop-ups para este arquivo e tente novamente.');
+    return;
+  }
+
+  w.document.open();
+
+  w.document.write(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <title>Guia de Espaços - Cerimonial de Rondônia</title>
+
+    <style>
+    @page{size:A4;margin:17mm}
+    *{box-sizing:border-box}
+    body{font:12px/1.5 Arial,sans-serif;color:#222;margin:0}
+    .head{border-bottom:3px solid #b4934d;padding:0 0 13px;margin-bottom:20px}
+    .kicker{font-size:9px;letter-spacing:2px;color:#94763a;font-weight:bold;text-transform:uppercase}
+    .head h1{font:24px Georgia,serif;margin:5px 0;color:#171713}
+    .head p{font-size:10px;color:#666;margin:0}
+    .venue{break-inside:avoid;border:1px solid #d8d2c4;border-radius:4px;padding:15px;margin:0 0 16px}
+    .venue h2{font:20px Georgia,serif;margin:0 0 10px;color:#222}
+    .info{display:grid;grid-template-columns:150px 1fr;gap:12px;border-top:1px solid #e7e2d8;padding:7px 0}
+    .info strong{font-size:9px;letter-spacing:.6px;text-transform:uppercase;color:#8c6d2f}
+    .info div{overflow-wrap:anywhere}
+    .venue-photo{max-width:100%;max-height:210px;object-fit:contain;display:block}
+    .foot{border-top:1px solid #d8d2c4;margin-top:22px;padding-top:8px;color:#777;font-size:9px;text-align:center}
+    a{color:#73551d}
+    .actions{position:sticky;top:0;background:#fff;padding:10px 0;border-bottom:1px solid #ddd;margin-bottom:15px}
+    .actions button{background:#b4934d;color:#111;border:0;padding:9px 15px;cursor:pointer;border-radius:3px;font-weight:bold}
+    @media print{.actions{display:none}.venue{break-inside:avoid}}
+    </style>
+    </head>
+
+    <body>
+    <div class="actions">
+      <button onclick="window.print()">Salvar / imprimir PDF</button>
+      <span style="font-size:11px;color:#666">Na tela de impressão, selecione “Salvar como PDF”.</span>
+    </div>
+
+    <header class="head">
+      <div class="kicker">Governo do Estado de Rondônia</div>
+      <h1>Guia de Espaços para Eventos</h1>
+      <p>Setor de Cerimonial • Diretório institucional</p>
+    </header>
+
+    ${selected.map(v => `
+      <section class="venue">
+        <h2>${esc(v.name)}</h2>
+        ${rows(v)}
+      </section>
+    `).join('')}
+
+    <footer class="foot">
+      CERIMONIAL DO GOVERNO DO ESTADO DE RONDÔNIA • DOCUMENTO GERADO PARA CONSULTA
+    </footer>
+
+    <script>
+      window.onload = () => {
+        setTimeout(() => window.print(), 500);
+      };
+    <\/script>
+
+    </body>
+    </html>
+  `);
+
+  w.document.close();
+  closePdfOptions();
+}
+
+// ========================================
+// INICIAR SISTEMA
+// ========================================
+
+initApp();
+
+</script>
+</body>
+</html>
